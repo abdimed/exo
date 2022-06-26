@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>EXODIA.dev</title>
+    <meta name="title" content="EXODIA.dev">
+    <meta name="description" content="Code is gold...">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="EXODIA.dev">
+    <meta property="og:description" content="Code is gold...">
+    <meta property="og:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="EXODIA.dev">
+    <meta property="twitter:description" content="Code is gold...">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="http://127.0.0.1:8000/css/app.css" rel="stylesheet">
+    <!-- Styles -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+
+<body class="antialiase ">
+
+    <div x-data="{ 'darkMode': true }">
+
+        <div :class="{ 'dark': darkMode === true }">
+
+            <header class="sticky top-0 z-50 md:fixed w-screen">
+
+                <nav x-data="{ showBar: false, hideBar: true }" x-on:scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
+    class="w-screen lg:mt-5 lg:px-10"
+    :class="{
+        'transition-all ease-in-out duration-700 lg:px-0 lg:mt-0 ': showBar,
+        'transition-all ease-in-out duration-700 ': !showBar
+    }">
+
+    <div class="flex justify-between backdrop-blur-sm  items-center lg:rounded-lg "
+        :class="{
+            'transition-all ease-in-out duration-700 lg:rounded-none lg:px-7 mt-0 ': showBar,
+            'transition-all ease-in-out duration-700 lg:rounded-lg': !showBar
+        }">
+
+        <div class="relative px-5 py-1 lg:px-10 lg:py-12 flex items-center">
+            <img class="w-7 lg:w-7 absolute"
+                :class="{
+                    'transition-all ease-in-out duration-700 scale-0 opacity-0': showBar,
+                    'transition-all ease-in-out duration-700 scale-100 opacity-100': !showBar
+                }"
+                src="assets/lg.svg" alt="logo">
+            <img class="w-10 lg:w-16 scale-0 absolute"
+                :class="{
+                    'transition-all ease-in-out duration-700 opacity-100 scale-100': showBar,
+                    'transition-all ease-in-out duration-700 opacity-0 scale-0': !showBar
+                }"
+                src="assets/logo-gold.svg" alt="logo">
+            <h1 class="text-gold text-2xl lg:text-3xl lg:ml-2 font-kdam absolute -right-40"
+                :class="{
+                    'transition-all ease-in-out duration-700 opacity-0 scale-75': showBar,
+                    'transition-all ease-in-out duration-700 opacity-100 scale-100': !showBar
+                }">
+                EXODIA.dev</h1>
+        </div>
+
+        <div class="p-4 lg:px-10 py-5 ">
+            <ul class="hidden lg:flex items-center space-x-5 float-right text-white font-bold text-base transform-none"
+                :class="{
+                    'transition-all ease-in-out duration-700 scale-100': showBar,
+                    'transition-all ease-in-out duration-700 scale-100': !showBar
+                }">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Thank you</li>
+                <li class="flex items-center border-l border-slate-200 ml-6 pl-6 ">
+                    <label for="toggle">
+                        <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#94a3b8" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                            <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+                            <path d="M19 11h2m-1 -1v2" />
+                        </svg>
+                        <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-brightness-down" width="20" height="20"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <circle cx="12" cy="12" r="3" />
+                            <line x1="12" y1="5" x2="12" y2="5.01" />
+                            <line x1="17" y1="7" x2="17" y2="7.01" />
+                            <line x1="19" y1="12" x2="19" y2="12.01" />
+                            <line x1="17" y1="17" x2="17" y2="17.01" />
+                            <line x1="12" y1="19" x2="12" y2="19.01" />
+                            <line x1="7" y1="17" x2="7" y2="17.01" />
+                            <line x1="5" y1="12" x2="5" y2="12.01" />
+                            <line x1="7" y1="7" x2="7" y2="7.01" />
+                        </svg>
+                    </label>
+                    <button id="toggle" class="hidden" @click="darkMode = !darkMode"> </button>
+
+                </li>
+            </ul>
+            <div class="lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="20"
+                    height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FFC100" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <line x1="4" y1="6" x2="20" y2="6" />
+                    <line x1="4" y1="12" x2="20" y2="12" />
+                    <line x1="4" y1="18" x2="20" y2="18" />
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+
+</nav>
+
+            </header>
+
+            <main class="bg-[#f8f8ff] dark:bg-slate-900 ">
+
+                <section class="">
+
+                    <header class="h-screen container m-auto">
+                        <div class="relative grid grid-cols-1 md:grid-cols-2 h-full bg-cover bg-center" x-data="{hover:'false'}">
+
+
+    <div class="flex flex-col p-4 md:p-12  ">
+
+        <div class="m-auto font-code">
+
+            <h1 class="text-5xl  lg:text-7xl  font-black">Welcome to Exodia</h1>
+
+            <p class="mt-10 text-3xl lg:text-5xl text-gold">We provide web and mobile coding services</p>
+
+            <div class="flex mt-20 ml-1">
+                <a href="/"
+                    class="w-fit border-2 border-gold text-xl lg:text-3xl  px-5 py-2
+                transition-all ease-in-out duration-500 hover:-translate-y-1 hover:bg-gold hover:text-black focus:border-black">
+                    About us </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="" @mouseover="hover = true" @mouseover.away="hover = false">
+
+        <div class="relative flex items-center h-full w-full" >
+
+            <div class="absolute left-0 right-0 m-auto z-10 w-96 h-96 bg-red-500">
+            </div>
+
+
+            <div class="absolute left-0 right-0 m-auto z-0 w-96 h-96 grayscale bg-blue-500"
+             :class="{'transition-all duration-1000 ease-in-out translate-y-28 translate-x-28':hover,
+                      'transition-all duration-1000 ease-in-out -translate-y-0 -translate-x-0':!hover}">
+            </div>
+
+
+            <div class="p-2 absolute left-0 right-0 m-auto z-20 w-96 h-96 backdrop-blur-sm bg-white/10"
+             :class="{'transition-all duration-1000 ease-in-out -translate-y-28 -translate-x-28':hover,
+                      'transition-all duration-1000 ease-in-out -translate-y-0 -translate-x-0':!hover}">
+                <p class="text-xl font-bold font-code animate-pulse"> Hover me </p>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+</div>
+                    </header>
+
+                </section>
+
+                <section class=" mt-20">
+
+                    <div class="container mx-auto">
+                        <h2 class="text-lion text-5xl  w-full p-4"> Our expertese </h2>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-10 py-10">
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="m-auto w-32 " src="assets/laravel-logo.svg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2 ">
+            Laravel
+        </h3>
+
+    </a>
+
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="m-auto w-36" src="assets/tailwind-logo.svg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2 ">
+            Tailwindcss
+        </h3>
+
+    </a>
+
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="m-auto w-28" src="assets/flutter-logo.svg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2">
+            Flutter
+        </h3>
+
+    </a>
+</div>
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

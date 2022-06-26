@@ -50,7 +50,7 @@
         'transition-all ease-in-out duration-700 ': !showBar
     }">
 
-    <div class="flex justify-between backdrop-blur-sm  items-center lg:rounded-lg "
+    <div class="flex justify-between backdrop-blur-sm bg-white/50 dark:bg-black/50 items-center lg:rounded-lg "
         :class="{
             'transition-all ease-in-out duration-700 lg:rounded-none lg:px-7 mt-0 ': showBar,
             'transition-all ease-in-out duration-700 lg:rounded-lg': !showBar
@@ -69,7 +69,7 @@
                     'transition-all ease-in-out duration-700 opacity-0 scale-0': !showBar
                 }"
                 src="assets/logo-gold.svg" alt="logo">
-            <h1 class="text-gold text-2xl lg:text-3xl lg:ml-2 font-kdam absolute -right-40"
+            <h1 class="text-gold text-2xl lg:text-3xl font-kdam absolute -right-44"
                 :class="{
                     'transition-all ease-in-out duration-700 opacity-0 scale-75': showBar,
                     'transition-all ease-in-out duration-700 opacity-100 scale-100': !showBar
@@ -78,7 +78,7 @@
         </div>
 
         <div class="p-4 lg:px-10 py-5 ">
-            <ul class="hidden lg:flex items-center space-x-5 float-right text-white font-bold text-base transform-none"
+            <ul class="hidden lg:flex items-center space-x-5 float-right text-black dark:text-white font-bold text-base transform-none"
                 :class="{
                     'transition-all ease-in-out duration-700 scale-100': showBar,
                     'transition-all ease-in-out duration-700 scale-100': !showBar
@@ -96,21 +96,11 @@
                             <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
                             <path d="M19 11h2m-1 -1v2" />
                         </svg>
-                        <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg"
-                            class="icon icon-tabler icon-tabler-brightness-down" width="20" height="20"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <circle cx="12" cy="12" r="3" />
-                            <line x1="12" y1="5" x2="12" y2="5.01" />
-                            <line x1="17" y1="7" x2="17" y2="7.01" />
-                            <line x1="19" y1="12" x2="19" y2="12.01" />
-                            <line x1="17" y1="17" x2="17" y2="17.01" />
-                            <line x1="12" y1="19" x2="12" y2="19.01" />
-                            <line x1="7" y1="17" x2="7" y2="17.01" />
-                            <line x1="5" y1="12" x2="5" y2="12.01" />
-                            <line x1="7" y1="7" x2="7" y2="7.01" />
-                        </svg>
+                        <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC100" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+                          </svg>
                     </label>
                     <button id="toggle" class="hidden" @click="darkMode = !darkMode"> </button>
 
@@ -135,7 +125,7 @@
 
             </header>
 
-            <main class="bg-[#f8f8ff] dark:bg-slate-900 ">
+            <main class="transition-colors ease-in-out duration-1000 bg-white dark:bg-[#05272D] ">
 
                 <section class="">
 
@@ -147,14 +137,14 @@
 
         <div class="m-auto font-code">
 
-            <h1 class="text-5xl  lg:text-7xl  font-black">Welcome to Exodia</h1>
+            <h1 class="text-5xl lg:text-5xl font-black dark:text-white">Welcome to Exodia</h1>
 
-            <p class="mt-10 text-3xl lg:text-5xl text-gold">We provide web and mobile coding services</p>
+            <p class="mt-10 text-3xl lg:text-3xl text-gold">We provide web and mobile coding services</p>
 
             <div class="flex mt-20 ml-1">
                 <a href="/"
                     class="w-fit border-2 border-gold text-xl lg:text-3xl  px-5 py-2
-                transition-all ease-in-out duration-500 hover:-translate-y-1 hover:bg-gold hover:text-black focus:border-black">
+                transition-all ease-in-out duration-500 hover:-translate-y-1 dark:text-white hover:dark:text-black hover:bg-gold hover:text-black focus:border-black">
                     About us </a>
             </div>
 
@@ -166,20 +156,23 @@
 
         <div class="relative flex items-center h-full w-full" >
 
-            <div class="absolute left-0 right-0 m-auto z-10 w-96 h-96 bg-red-500">
+            <div class="absolute flex rounded-2xl border-2 left-0 right-0 m-auto z-10 w-72 h-72 lg:w-96 lg:h-96   bg-[#45FFE8]">
+                <img src="assets/head.svg" class="absolute bottom-4 right-4 w-10" alt="">
             </div>
 
 
-            <div class="absolute left-0 right-0 m-auto z-0 w-96 h-96 grayscale bg-blue-500"
-             :class="{'transition-all duration-1000 ease-in-out translate-y-28 translate-x-28':hover,
+            <div class="absolute rounded-2xl border-2 left-0 right-0 m-auto z-0 w-72 h-72 lg:w-96 lg:h-96  backdrop-sepia bg-white/10  transition-all duration-1000 ease-in-out delay-75 translate-y-20 translate-x-20"
+             :class="{'transition-all duration-1000 ease-in-out translate-y-20 translate-x-20':hover,
                       'transition-all duration-1000 ease-in-out -translate-y-0 -translate-x-0':!hover}">
+                       <img src="assets/head.svg" class="absolute bottom-4 right-4 w-10" alt="">
             </div>
 
 
-            <div class="p-2 absolute left-0 right-0 m-auto z-20 w-96 h-96 backdrop-blur-sm bg-white/10"
-             :class="{'transition-all duration-1000 ease-in-out -translate-y-28 -translate-x-28':hover,
+            <div class="p-2 absolute rounded-2xl border-2 left-0 right-0 m-auto z-20 w-72 h-72 lg:w-96 lg:h-96 transition-all backdrop-saturate-200 bg-white/30 duration-1000 ease-in-out delay-75 -translate-y-20 -translate-x-20"
+             :class="{'transition-all duration-1000 ease-in-out -translate-y-20 -translate-x-20':hover,
                       'transition-all duration-1000 ease-in-out -translate-y-0 -translate-x-0':!hover}">
-                <p class="text-xl font-bold font-code animate-pulse"> Hover me </p>
+                <p class="text-xl font-bold font-code"> Hover me </p>
+                <img src="assets/head.svg" class="absolute bottom-4 right-4 w-10" alt="">
 
             </div>
         </div>
@@ -207,7 +200,7 @@
 
         <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
 
-            <img class="m-auto w-32 " src="assets/laravel-logo.svg" alt="logo">
+            <img class="m-auto w-32 " src="/assets/laravel-logo.svg" alt="logo">
 
         </div>
 
@@ -221,7 +214,7 @@
 
         <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
 
-            <img class="m-auto w-36" src="assets/tailwind-logo.svg" alt="logo">
+            <img class="m-auto w-36" src="/assets/tailwind-logo.svg" alt="logo">
 
         </div>
 
@@ -235,7 +228,7 @@
 
         <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
 
-            <img class="m-auto w-28" src="assets/flutter-logo.svg" alt="logo">
+            <img class="m-auto w-28" src="/assets/flutter-logo.svg" alt="logo">
 
         </div>
 

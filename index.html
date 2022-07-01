@@ -35,14 +35,12 @@
 
 </head>
 
-<body class="antialiase overflow-x-hidden">
+<body class="antialiase overflow-x-hidden bg-black">
 
-    <div x-data="{ 'darkMode': true }" :class="{ 'dark': darkMode === true }">
-
-        <header class=" top-0 z-50 fixed w-screen">
+        <header class="h-screen">
 
             <nav x-data="{ showBar: false, hideBar: true }" x-on:scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
-    class="w-screen lg:mt-5 lg:px-10"
+    class="fixed bg-black/5 top-0 z-50 w-screen lg:mt-5 lg:px-10"
     :class="{
         'transition-all ease-in-out duration-700 lg:px-0 lg:mt-0 ': showBar,
         'transition-all ease-in-out duration-700 ': !showBar
@@ -84,35 +82,14 @@
                 <li>Home</li>
                 <li>About Us</li>
                 <li>Thank you</li>
-                <li class="flex items-center border-l border-slate-200 ml-6 pl-6 ">
-                    <label for="toggle">
-                        <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            viewBox="0 0 24 24" stroke-width="1.5" stroke="#94a3b8" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                            <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                            <path d="M19 11h2m-1 -1v2" />
-                        </svg>
-                        <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC100" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="12" cy="12" r="4" />
-                            <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-                          </svg>
-                    </label>
-                    <button id="toggle" class="hidden" @click="darkMode = !darkMode"> </button>
 
-                </li>
             </ul>
             <div class="lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="20"
-                    height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="#FFC100" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <line x1="4" y1="6" x2="20" y2="6" />
-                    <line x1="4" y1="12" x2="20" y2="12" />
-                    <line x1="4" y1="18" x2="20" y2="18" />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="32" height="32" viewBox="0 0 24 24" stroke-width="3" stroke="#EDC423" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="4" y1="8" x2="20" y2="8" />
+                    <line x1="4" y1="16" x2="20" y2="16" />
+                  </svg>
             </div>
         </div>
 
@@ -121,54 +98,54 @@
 
 </nav>
 
-        </header>
+            <section class="flex w-screen h-full ">
+                <div class="m-auto grid grid-cols-1 lg:grid-rows-1  grid-flow-row-dense lg:grid-cols-2 h-full lg:container lg:content-center p-4"
+    x-data="{ hover: '' }">
 
-        <main class="transition-colors ease-in-out duration-1000  dark:bg-black z-0 ">
+    <div class="m-auto h-fit lg:h-96 flex flex-col lg:justify-between font-poppins">
+        <div>
 
-            <section class="flex w-screen h-screen">
+            <h1 class="text-5xl lg:text-6xl dark:text-white">Welcome to <span class="text-gold">Exodia.dev</span></h1>
 
-                <header class="container h-full mx-auto">
-                    <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-2 h-full content-center" x-data="{ hover: '' }">
+            <p class="text-xl text-gray-400 mt-10 leading-10">We provide custom web and mobile
+                <span
+                    class="text-white font-bold text-lg bg-gradient-to-br from-lion/60 to-cyanp/60 p-2 ">Applications</span>
+                for your business
+            </p>
+        </div>
 
-    <div class="p-4 lg:p-12 lg:m-auto font-code h-fit">
-
-        <h1 class="text-5xl  dark:text-white">Welcome to <span class="text-gold">Exodia.dev</span></h1>
-
-        <p class="text-xl text-gray-400">We provide custum web and mobile applications for you bunsiness </p>
-
-        <div class="flex mt-20 ml-1">
-            <a href="/"
-                class="w-fit border border-gold text-xl lg:text-3xl  px-5 py-2
-                transition-all ease-in-out duration-500 hover:-translate-y-1 dark:text-white hover:dark:text-black hover:bg-gold hover:text-black focus:border-black">
+        <div
+            class=" ml-1 mt-20 lg:mt-0 h-fit w-fit border border-gold text-gold text-xl lg:text-3xl  px-5 py-2
+        transition-all ease-in-out duration-500 hover:-translate-y-1 hover:dark:text-black hover:bg-gold hover:text-black focus:border-black">
+            <a href="/">
                 About us </a>
         </div>
 
     </div>
 
-    <div class="relative h-56 lg:h-full" @touchstart.pasive="hover = !hover"  x-on:mouseenter="hover = true" x-on:mouseleave="hover = false">
+    <div class="relative h-full" @touchstart.passive="hover = !hover" x-on:mouseenter="hover = true"
+        x-on:mouseleave="hover = false">
 
+        <div class=" absolute flex bg-cyanp/30 lg:right-0 lg:bottom-0 right-10 top-0 m-auto z-10 w-24 h-24 lg:w-96 lg:h-96 backdrop-blur border border-cyanp"
+            :class="{
+                'transition-all duration-1000 ease-in-out bg-cyanp/30': hover,
+                'transition-all duration-1000 ease-in-out ': !hover
+            }">
+            <img src="assets/x-cyan.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
 
+        </div>
 
-            <div class=" absolute flex bg-cyanp/30  lg:left-0 lg:right-0 right-10 bottom-0 lg:top-0 m-auto z-10 w-24 h-24 lg:w-96 lg:h-96 backdrop-blur border border-cyanp"
-                :class="{
-                    'transition-all duration-1000 ease-in-out  bg-cyanp/30': hover,
-                    'transition-all duration-1000 ease-in-out ': !hover
-                }">
-                <img src="assets/x-cyan.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
+        <div class=" lg:hidden absolute  bg-gold/30 border-gold border lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
+            :class="{
+                'transition-all duration-1000 ease-in-out lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover,
+                'transition-all duration-1000 ease-in-out translate-y-0 translate-x-0 ': !hover
+            }">
+            <p class="text-base lg:text-xl  dark:text-white mt-2 ml-2"> Touch </p>
+            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
 
-            </div>
+        </div>
 
-            <div class=" lg:hidden absolute  bg-gold/30 border-gold border lg:left-0 lg:right-0 right-10 bottom-0 lg:top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
-                :class="{
-                    'transition-all duration-1000 ease-in-out lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover,
-                    'transition-all duration-1000 ease-in-out translate-y-0 translate-x-0 ': !hover
-                }">
-                <p class="text-base lg:text-xl  dark:text-white mt-2 ml-2"> Touch </p>
-                <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
-
-            </div>
-
-            <div class=" hidden lg:block absolute  bg-gold/30 border-gold border lg:left-0 lg:right-0 right-10 bottom-0 lg:top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
+        <div class=" hidden lg:block absolute  bg-gold/30 border-gold border lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
             :class="{
                 'transition-all duration-1000 ease-in-out lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover,
                 'transition-all duration-1000 ease-in-out translate-y-0 translate-x-0 ': !hover
@@ -178,23 +155,23 @@
 
         </div>
 
-            <div class="absolute  border bg-magentap/30 border-magentap lg:left-0 lg:right-0 right-10 bottom-0 lg:top-0 lg:m-auto z-0 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
+        <div class="absolute  border bg-magentap/30 border-magentap lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-0 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
+            :class="{
+                'transition-all duration-1000 ease-in-out border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': hover,
+                'transition-all duration-1000 ease-in-out border-gold -translate-y-0 -translate-x-0 lg:translate-x-0 lg:translate-y-0':
+                    !hover
+            }">
+            <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-100" alt=""
                 :class="{
-                    'transition-all duration-1000 ease-in-out border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': hover,
-                    'transition-all duration-1000 ease-in-out border-gold -translate-y-0 -translate-x-0 lg:translate-x-0 lg:translate-y-0':
-                        !hover
+                    'transition-all duration-1000 ease-in-out scale-100': hover,
+                    'transition-all duration-1000 ease-in-out scale-0': !hover
                 }">
-                <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-100" alt=""
-                    :class="{
-                        'transition-all duration-1000 ease-in-out scale-100': hover,
-                        'transition-all duration-1000 ease-in-out scale-0': !hover
-                    }">
-                <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-0" alt=""
-                    :class="{
-                        'transition-all duration-1000 ease-in-out scale-0': hover,
-                        'transition-all duration-1000 ease-in-out scale-100': !hover
-                    }">
-            </div>
+            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-0" alt=""
+                :class="{
+                    'transition-all duration-1000 ease-in-out scale-0': hover,
+                    'transition-all duration-1000 ease-in-out scale-100': !hover
+                }">
+        </div>
 
 
     </div>
@@ -204,10 +181,15 @@
 
 
 </div>
-                </header>
-
             </section>
 
+        </header>
+
+        <main class="transition-colors ease-in-out duration-1000  dark:bg-black z-0 ">
+
+
+
+            
 
         </main>
 

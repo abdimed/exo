@@ -27,45 +27,45 @@
     <meta property="twitter:image"
         content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
     <!-- Styles -->
+    <link href="css/app.css" rel="stylesheet">
+
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 
 </head>
 
-<body class="antialiase overflow-x-hidden bg-black">
+<body class="antialiase overflow-x-hidden bg-gris">
 
-        <header class="h-screen">
+    <header class="xl:h-[940px] lg:h-[880px] md:h-[770px] h-[640px] bg-black">
 
-            <nav x-data="{ showBar: false, hideBar: true }" x-on:scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
-    class="fixed bg-black/5 top-0 z-50 w-screen lg:mt-5 lg:px-10"
+        <nav x-data="{ showBar: false, hideBar: true }" x-on:scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
+    class="fixed bg-black/5 z-50 w-full md:mt-5 md:px-10 transition-all ease-in-out duration-700"
     :class="{
-        'transition-all ease-in-out duration-700 lg:px-0 lg:mt-0 ': showBar,
-        'transition-all ease-in-out duration-700 ': !showBar
+        'md:px-0 md:-translate-y-5': showBar,
     }">
 
-    <div class="flex justify-between  backdrop-blur-sm bg-black/20 items-center lg:rounded-lg "
+    <div class="flex justify-between backdrop-blur-sm items-center border border-gold transition-all ease-in-out duration-700 "
         :class="{
-            'transition-all ease-in-out duration-700 lg:rounded-none lg:px-7 mt-0 ': showBar,
-            'transition-all ease-in-out duration-700 lg:rounded-lg': !showBar
+            'md:px-7 mt-0': showBar,
         }">
 
-        <div class="relative px-5 py-1 lg:px-10 lg:py-12 flex items-center">
-            <img class="w-7 lg:w-7 absolute"
+        <div class="relative px-5 py-1 md:px-10 md:py-12 flex items-center">
+            <img class="w-7 md:w-7 absolute transition-all ease-in-out duration-700 scale-100 opacity-100"
                 :class="{
-                    'transition-all ease-in-out duration-700 scale-0 opacity-0': showBar,
-                    'transition-all ease-in-out duration-700 scale-100 opacity-100': !showBar
+                    'scale-0 opacity-0': showBar,
                 }"
                 src="assets/lg.svg" alt="logo">
-            <img class="w-10 lg:w-16 scale-0 absolute"
+            <img class="w-10 md:w-16 scale-0 absolute"
                 :class="{
                     'transition-all ease-in-out duration-700 opacity-100 scale-100': showBar,
                     'transition-all ease-in-out duration-700 opacity-0 scale-0': !showBar
                 }"
                 src="assets/logo-gold.svg" alt="logo">
-            <h1 class="text-gold text-2xl lg:text-3xl font-kdam absolute lg:left-20 left-16"
+            <h1 class="text-gold text-2xl md:text-3xl font-kdam absolute md:left-20 left-16"
                 :class="{
                     'transition-all ease-in-out duration-700 opacity-0 scale-75': showBar,
                     'transition-all ease-in-out duration-700 opacity-100 scale-100': !showBar
@@ -73,8 +73,8 @@
                 EXODIA.dev</h1>
         </div>
 
-        <div class="p-4 lg:px-10 py-5 ">
-            <ul class="hidden lg:flex items-center space-x-5 float-right text-white  text-base transform-none"
+        <div class="p-4 md:px-10 py-5 ">
+            <ul class="hidden md:flex items-center space-x-5 float-right text-white  text-base transform-none"
                 :class="{
                     'transition-all ease-in-out duration-700 scale-100': showBar,
                     'transition-all ease-in-out duration-700 scale-100': !showBar
@@ -84,7 +84,7 @@
                 <li>Thank you</li>
 
             </ul>
-            <div class="lg:hidden">
+            <div class="md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu" width="32" height="32" viewBox="0 0 24 24" stroke-width="3" stroke="#EDC423" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <line x1="4" y1="8" x2="20" y2="8" />
@@ -98,20 +98,22 @@
 
 </nav>
 
-            <section class="flex w-screen h-full ">
-                <div class="m-auto grid grid-cols-1 lg:grid-rows-1  grid-flow-row-dense lg:grid-cols-2 h-full lg:container lg:content-center p-4"
-    x-data="{ hover: '' }">
+        <section class="flex w-full h-full">
+            <div class="relative m-auto grid grid-cols-1 lg:grid-rows-1 grid-flow-row-dense lg:grid-cols-2 h-full lg:container lg:content-center p-4 mt-10 lg:mt-0"
+    x-data="{ hover: '', shown:'false' }">
 
-    <div class="m-auto h-fit lg:h-96 flex flex-col lg:justify-between font-poppins">
-        <div>
+    <div class="m-auto h-fit lg:h-96 flex flex-col lg:justify-between font-montserrat animate-fadeIn"  >
 
-            <h1 class="text-5xl lg:text-6xl dark:text-white">Welcome to <span class="text-gold">Exodia.dev</span></h1>
+        <div  class="" x-intersect="$el.classList.add('animate-fadeIn')">
+
+            <h1 class="text-5xl lg:text-6xl dark:text-white font-black">Welcome to <span class="text-gold">Exodia.dev</span></h1>
 
             <p class="text-xl text-gray-400 mt-10 leading-10">We provide custom web and mobile
                 <span
-                    class="text-white font-bold text-lg bg-gradient-to-br from-lion/60 to-cyanp/60 p-2 ">Applications</span>
+                    class="text-white font-bold text-lg bg-gradient-to-br from-cyanp/60 to-gold/60 p-2 ">Applications</span>
                 for your business
             </p>
+
         </div>
 
         <div
@@ -126,72 +128,95 @@
     <div class="relative h-full" @touchstart.passive="hover = !hover" x-on:mouseenter="hover = true"
         x-on:mouseleave="hover = false">
 
-        <div class=" absolute flex bg-cyanp/30 lg:right-0 lg:bottom-0 right-10 top-0 m-auto z-10 w-24 h-24 lg:w-96 lg:h-96 backdrop-blur border border-cyanp"
+        <div class=" absolute flex bg-cyanp/30 lg:right-0 bottom-0 right-10 top-0 m-auto z-10 w-24 h-24 lg:w-96 lg:h-96 backdrop-blur border border-cyanp 'transition-all duration-1000 ease-in-out "
             :class="{
-                'transition-all duration-1000 ease-in-out bg-cyanp/30': hover,
-                'transition-all duration-1000 ease-in-out ': !hover
+                'bg-cyanp/30': hover,
             }">
             <img src="assets/x-cyan.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
 
         </div>
 
-        <div class=" lg:hidden absolute  bg-gold/30 border-gold border lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
+        <div class=" lg:hidden absolute m-auto bg-gold/30 border-gold border lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
             :class="{
-                'transition-all duration-1000 ease-in-out lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover,
-                'transition-all duration-1000 ease-in-out translate-y-0 translate-x-0 ': !hover
+                'lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover
             }">
             <p class="text-base lg:text-xl  dark:text-white mt-2 ml-2"> Touch </p>
             <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
 
         </div>
 
-        <div class=" hidden lg:block absolute  bg-gold/30 border-gold border lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
+        <div class=" hidden lg:block absolute m-auto bg-gold/30 border-gold border lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
             :class="{
-                'transition-all duration-1000 ease-in-out lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover,
-                'transition-all duration-1000 ease-in-out translate-y-0 translate-x-0 ': !hover
+                ' lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover
             }">
             <p class="text-base lg:text-xl   dark:text-white mt-5 ml-5"> Hover </p>
             <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
 
         </div>
 
-        <div class="absolute  border bg-magentap/30 border-magentap lg:right-0 lg:bottom-0 right-10 top-0 lg:m-auto z-0 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
+        <div class="absolute m-auto border bg-magentap/30 border-gold lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-0 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
             :class="{
-                'transition-all duration-1000 ease-in-out border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': hover,
-                'transition-all duration-1000 ease-in-out border-gold -translate-y-0 -translate-x-0 lg:translate-x-0 lg:translate-y-0':
-                    !hover
+                'border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': hover
             }">
-            <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-100" alt=""
+
+            <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt=""
                 :class="{
-                    'transition-all duration-1000 ease-in-out scale-100': hover,
-                    'transition-all duration-1000 ease-in-out scale-0': !hover
+                    'transition-all duration-700 ease-in-out scale-100': hover,
+                    'transition-all duration-700 ease-in-out scale-0': !hover
                 }">
-            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 scale-0" alt=""
+            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 " alt=""
                 :class="{
-                    'transition-all duration-1000 ease-in-out scale-0': hover,
-                    'transition-all duration-1000 ease-in-out scale-100': !hover
+                    'transition-all duration-700 ease-in-out scale-0': hover,
+                    'transition-all duration-700 ease-in-out scale-100': !hover
                 }">
         </div>
 
 
     </div>
 
+
+
 </div>
 
 
 
 </div>
-            </section>
+        </section>
 
-        </header>
+    </header>
 
-        <main class="transition-colors ease-in-out duration-1000  dark:bg-black z-0 ">
+    <main class="z-0 font-montserrat">
+
+        <section class="bg-gris">
+
+            <div class="container mx-auto">
+                <div class="my-10 px-8 py-4">
+    <h2 class="text-white text-3xl lg:text-5xl"> Make your business more efficent </h2>
+    <h3 class="text-gold text-lg w-full mt-5">We provide software and technical assistance to your business in
+        three simple steps : </h3>
+
+        <div class="w-full px-4 lg:mx-24 mt-10">
+        <ul class="text-gray-400 border-l-2 border-gray-400 px-2">
+            <li>assessement of your needs</li>
+            <li>exp0ose your business </li>
+            <li>assistance and aviabilty</li>
+        </ul>
 
 
+    </div>
+</div>
+            </div>
+
+        </section>
+
+
+        <section class="bg-gris">
 
             
 
-        </main>
+        </section>
+
+    </main>
 
 
 

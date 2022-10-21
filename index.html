@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,57 +26,53 @@
     <meta property="twitter:image"
         content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
-    <!-- Styles -->
-    <link href="css/app.css" rel="stylesheet">
-
+    <!-- Scripts -->
+    <script type="module" src="http://127.0.0.1:5173/@vite/client"></script><link rel="stylesheet" href="http://127.0.0.1:5173/resources/css/app.css" /><script type="module" src="http://127.0.0.1:5173/resources/js/app.js"></script>
     <!-- Alpine Plugins -->
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
-    <!-- Alpine Core -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
 
 </head>
 
-<body class="antialiase overflow-x-hidden bg-gris">
+<body class="antialiase overflow-x-hidden bg-black font-robotoslab">
 
-    <header class="xl:h-[940px] lg:h-[880px] md:h-[770px] h-[640px] bg-black">
+    <header class="">
 
         <nav x-data="{ showBar: false, hideBar: true }" x-on:scroll.window="showBar = (window.pageYOffset > 20) ? true : false"
-    class="fixed bg-black/5 z-50 w-full md:mt-5 md:px-10 transition-all ease-in-out duration-700"
+    class="fixed z-50 w-full md:mt-5 md:px-10 transition-all ease-in-out duration-700"
     :class="{
         'md:px-0 md:-translate-y-5': showBar,
     }">
 
-    <div class="flex justify-between backdrop-blur-sm items-center border border-gold transition-all ease-in-out duration-700 "
+    <div class="flex justify-between items-center backdrop-blur-sm border-gold border transition-all ease-in-out duration-700 "
         :class="{
             'md:px-7 mt-0': showBar,
         }">
 
-        <div class="relative px-5 py-1 md:px-10 md:py-12 flex items-center">
+        <div class="relative px-5 py-1 md:px-10 md:py-10 flex items-center">
             <img class="w-7 md:w-7 absolute transition-all ease-in-out duration-700 scale-100 opacity-100"
                 :class="{
                     'scale-0 opacity-0': showBar,
                 }"
                 src="assets/lg.svg" alt="logo">
-            <img class="w-10 md:w-16 scale-0 absolute"
+            <img class="w-10 md:w-16 scale-0 absolute transition-all ease-in-out duration-700"
                 :class="{
-                    'transition-all ease-in-out duration-700 opacity-100 scale-100': showBar,
-                    'transition-all ease-in-out duration-700 opacity-0 scale-0': !showBar
+                    'opacity-100 scale-100': showBar,
+                    'opacity-0 scale-0': !showBar
                 }"
                 src="assets/logo-gold.svg" alt="logo">
-            <h1 class="text-gold text-2xl md:text-3xl font-kdam absolute md:left-20 left-16"
+            <h1 class="text-gold text-2xl md:text-3xl font-kdam absolute md:left-20 left-16 transition-all ease-in-out duration-700"
                 :class="{
-                    'transition-all ease-in-out duration-700 opacity-0 scale-75': showBar,
-                    'transition-all ease-in-out duration-700 opacity-100 scale-100': !showBar
+                    'opacity-0 scale-75': showBar,
+                    'opacity-100 scale-100': !showBar
                 }">
                 EXODIA.dev</h1>
         </div>
 
         <div class="p-4 md:px-10 py-5 ">
-            <ul class="hidden md:flex items-center space-x-5 float-right text-white  text-base transform-none"
+            <ul class="hidden md:flex items-center space-x-5 float-right text-white text-base transform-none transition-all ease-in-out duration-700"
                 :class="{
-                    'transition-all ease-in-out duration-700 scale-100': showBar,
-                    'transition-all ease-in-out duration-700 scale-100': !showBar
+                    'scale-100': showBar,
+                    'scale-100': !showBar
                 }">
                 <li>Home</li>
                 <li>About Us</li>
@@ -98,110 +93,230 @@
 
 </nav>
 
+    </header>
+
+    <main class="z-0 h-[640px]">
+
         <section class="flex w-full h-full">
-            <div class="relative m-auto grid grid-cols-1 lg:grid-rows-1 grid-flow-row-dense lg:grid-cols-2 h-full lg:container lg:content-center p-4 mt-10 lg:mt-0"
-    x-data="{ hover: '', shown:'false' }">
 
-    <div class="m-auto h-fit lg:h-96 flex flex-col lg:justify-between font-montserrat animate-fadeIn"  >
+            <div class="relative m-auto flex justify-center h-full w-full lg:px-44 lg:content-center p-4 mt-36"
+    x-data="{ hover: '', shown: 'false' }">
 
-        <div  class="" x-intersect="$el.classList.add('animate-fadeIn')">
+    <div class="m-auto h-fit lg:h-96 flex flex-col lg:justify-between items-center animate-fadeIn">
 
-            <h1 class="text-5xl lg:text-6xl dark:text-white font-black">Welcome to <span class="text-gold">Exodia.dev</span></h1>
+        <div x-intersect="$el.classList.add('animate-fadeIn')">
 
-            <p class="text-xl text-gray-400 mt-10 leading-10">We provide custom web and mobile
+            <h1 class="text-5xl lg:text-6xl text-white text-center">Welcome to <span
+                    class="text-gold font-kdam">Exodia.dev</span></h1>
+
+            <p class="text-xl text-gray-400 mt-10 leading-10 text-center font-courier">We provide custom web and mobile
                 <span
-                    class="text-white font-bold text-lg bg-gradient-to-br from-cyanp/60 to-gold/60 p-2 ">Applications</span>
+                    class="text-white font-bold text-lg text-gradient-to-br from-cyanp/60 to-gold/60 p-2 ">Applications</span>
                 for your business
             </p>
 
         </div>
 
         <div
-            class=" ml-1 mt-20 lg:mt-0 h-fit w-fit border border-gold text-gold text-xl lg:text-3xl  px-5 py-2
-        transition-all ease-in-out duration-500 hover:-translate-y-1 hover:dark:text-black hover:bg-gold hover:text-black focus:border-black">
+            class="z-50 ml-1 mt-20 lg:mt-0 h-fit w-fit border border-gold text-gold text-xl lg:text-3xl  px-5 py-2
+        transition-all ease-in-out duration-500 hover:-translate-y-1  hover:bg-gold hover:text-black focus:border-black">
             <a href="/">
                 About us </a>
         </div>
 
     </div>
 
-    <div class="relative h-full" @touchstart.passive="hover = !hover" x-on:mouseenter="hover = true"
-        x-on:mouseleave="hover = false">
+    
 
-        <div class=" absolute flex bg-cyanp/30 lg:right-0 bottom-0 right-10 top-0 m-auto z-10 w-24 h-24 lg:w-96 lg:h-96 backdrop-blur border border-cyanp 'transition-all duration-1000 ease-in-out "
-            :class="{
-                'bg-cyanp/30': hover,
-            }">
-            <img src="assets/x-cyan.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
+    <div id="particles-js" class="absolute inset-0 w-full h-full z-10"></div>
 
-        </div>
-
-        <div class=" lg:hidden absolute m-auto bg-gold/30 border-gold border lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
-            :class="{
-                'lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover
-            }">
-            <p class="text-base lg:text-xl  dark:text-white mt-2 ml-2"> Touch </p>
-            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
-
-        </div>
-
-        <div class=" hidden lg:block absolute m-auto bg-gold/30 border-gold border lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-20 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10"
-            :class="{
-                ' lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-10 backdrop-blur bg-gold/30': hover
-            }">
-            <p class="text-base lg:text-xl   dark:text-white mt-5 ml-5"> Hover </p>
-            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
-
-        </div>
-
-        <div class="absolute m-auto border bg-magentap/30 border-gold lg:right-0 bottom-0 right-10 top-0 lg:m-auto z-0 w-24 h-24 lg:w-96 lg:h-96 transition-all duration-1000 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
-            :class="{
-                'border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': hover
-            }">
-
-            <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt=""
-                :class="{
-                    'transition-all duration-700 ease-in-out scale-100': hover,
-                    'transition-all duration-700 ease-in-out scale-0': !hover
-                }">
-            <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 " alt=""
-                :class="{
-                    'transition-all duration-700 ease-in-out scale-0': hover,
-                    'transition-all duration-700 ease-in-out scale-100': !hover
-                }">
-        </div>
-
-
-    </div>
-
-
-
+    <script src="/assets/particles.js"></script>
 </div>
 
-
-
-</div>
         </section>
 
-    </header>
+        <section class="bg-gris mt-32">
 
-    <main class="z-0 font-montserrat">
+            <div class="container mx-auto mt-36">
+                <h2 class="text-lion text-5xl w-full p-4"> Our expertese </h2>
 
-        <section class="bg-gris">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 px-10 py-10">
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="w-full object-contain object-center" src="/assets/website.jpg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2 ">
+            Websites
+        </h3>
+
+    </a>
+
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="w-full object-contain object-center" src="/assets/website.jpg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2 ">
+           E-commerce
+        </h3>
+
+    </a>
+
+
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="w-full object-contain object-center" src="/assets/mobile.jpg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2 ">
+            Mobile Apps
+        </h3>
+
+    </a>
+
+    <a class="transition-transform ease-in-out duration-500 hover:-translate-y-1">
+
+        <div class="flex h-72 bg-[#EEEEEE] rounded-lg w-full transition-all ease-in-out duration-700 overflow-hidden">
+
+            <img class="w-full object-contain object-center" src="/assets/it.jpg" alt="logo">
+
+        </div>
+
+        <h3 class=" text-white text-3xl p-2 font-semibold underline decoration-lion underline-offset-2">
+           Software
+        </h3>
+
+    </a>
+</div>
+            </div>
+
+        </section>
+
+
+        <section class="bg-black">
 
             <div class="container mx-auto">
-                <div class="my-10 px-8 py-4">
-    <h2 class="text-white text-3xl lg:text-5xl"> Make your business more efficent </h2>
-    <h3 class="text-gold text-lg w-full mt-5">We provide software and technical assistance to your business in
+                <div class="my-10 py-52" x-data="{ hover: '', shown: false, dropDown1: false, dropDown2: false, dropDown3: false }">
+    <h2 class="text-white text-3xl lg:text-5xl text-center"> Make your business more efficent </h2>
+    <h3 class="text-gold text-lg w-full mt-20">We provide software and technical assistance to your business in
         three simple steps : </h3>
 
-        <div class="w-full px-4 lg:mx-24 mt-10">
-        <ul class="text-gray-400 border-l-2 border-gray-400 px-2">
-            <li>assessement of your needs</li>
-            <li>exp0ose your business </li>
-            <li>assistance and aviabilty</li>
-        </ul>
+    <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 ml-4 font-courier">
+        <div class="text-white grid grid-cols-1 gap-y-5" x-intersect="shown = true" >
 
+            <div class="border-t border-gray-600 py-2" @click="dropDown1 = !dropDown1" x-show="shown"
+                x-transition:enter="transition ease-out duration-500" x-transition:enter-start="opacity-0 -translate-x-32"
+                x-transition:enter-end="opacity-100 transition-x-0" x-transition:leave="transition ease-in duration-500"
+                x-transition:leave-start="opacity-100 transition-x-0" x-transition:leave-end="opacity-0 -translate-x-32">
+                <h3 class="text-base transition-all duration-300 cursor-pointer hover:text-gold" :class="{'text-gold' :dropDown1}">Assessement of your needs and giving technical advice</h3>
+
+                <div x-show="dropDown1" x-collapse.duration.500ms>
+
+                    <p class="mt-5 text-sm">We provide a technical
+                        expertise to give your business a
+                        fresh view from our side, and help to give you the best solutions possible</p>
+
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 py-2" @click="dropDown2 = !dropDown2" x-show="shown"
+            x-transition:enter="transition ease-out duration-[1500ms]" x-transition:enter-start="opacity-0 -translate-x-32"
+            x-transition:enter-end="opacity-100 transition-x-0" x-transition:leave="transition ease-in duration-[1500ms]"
+            x-transition:leave-start="opacity-100 transition-x-0" x-transition:leave-end="opacity-0 -translate-x-32">
+
+                <h3 class="text-base transition-all duration-300 cursor-pointer hover:text-gold" :class="{'text-gold' :dropDown2}">Delevering the best product possible to give exposer to your business</h3>
+
+                <div x-show="dropDown2" x-collapse.duration.500ms>
+
+                    <p class="mt-5 text-sm">After pointing out your needs we are going to work as a team
+                        where you are going to be envolved in the developoment of your project all the way from the
+                        start to the
+                        delevery date, we like to keep our clients close as you help us acheive the best product suited
+                        to your
+                        needs, we work only at one project at a time, so you will be sure that we are going to be
+                        aviable at all
+                        times when needed, </p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-600 py-2" @click="dropDown3 = !dropDown3" x-show="shown"
+            x-transition:enter="transition ease-out duration-[2000ms]" x-transition:enter-start="opacity-0 -translate-x-32"
+            x-transition:enter-end="opacity-100 transition-x-0" x-transition:leave="transition ease-in duration-[2000ms]"
+            x-transition:leave-start="opacity-100 transition-x-0" x-transition:leave-end="opacity-0 -translate-x-32">
+
+                <h3 class="text-base transition-all duration-300 cursor-pointer hover:text-gold" :class="{'text-gold' :dropDown3}">assistance and aviabilty</h3>
+
+                <div x-show="dropDown3" x-collapse.duration.500ms>
+
+                    <p class="mt-5 text-sm">Delevering a great
+                        project isn't enough, <span class="underline">we do more</span>, we
+                        assiste our clients after dilevery, we provide support 24/7 and we help your reach your goals
+                        overall,
+                        you will a full dilevery, with documentation and assistance. </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="lg:relative lg:block hidden" @touchstart.passive="hover = !hover" x-on:mouseenter="hover = true"
+            x-intersect="$el.classList.add('animate-fadeInLeft')" x-on:mouseleave="hover = false">
+
+            <div class=" absolute flex bg-cyanp/30 inset-0 m-auto z-10 w-24 h-24 lg:w-72 lg:h-72 backdrop-blur border border-cyanp 'transition-all duration-500 ease-in-out "
+                :class="{
+                    'bg-cyanp/30': dropDown3,
+                }">
+                <img src="assets/x-cyan.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
+
+            </div>
+
+            <div class=" lg:hidden absolute m-auto bg-gold/30 border-gold border inset-0 z-20 w-24 h-24 lg:w-72 lg:h-72 transition-all duration-500 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-32"
+                :class="{
+                    'lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-32 backdrop-blur bg-gold/30': dropDown1
+                }">
+                <p class="text-base lg:text-xl  dark:text-white mt-2 ml-2"> Touch </p>
+                <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
+
+            </div>
+
+            <div class=" hidden lg:block absolute m-auto bg-gold/30 border-gold border inset-0 z-20 w-24 h-24 lg:w-72 lg:h-72 transition-all duration-500 ease-in-out delay-75 lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-32"
+                :class="{
+                    ' lg:-translate-y-20 -translate-y-10 lg:-translate-x-20 -translate-x-32 backdrop-blur bg-gold/30': dropDown1
+                }">
+
+                <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt="">
+
+            </div>
+
+            <div class="absolute m-auto border bg-magentap/30 border-gold inset-0 z-0 w-24 h-24 lg:w-72 lg:h-72 transition-all duration-500 ease-in-out delay-75 lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10"
+                :class="{
+                    'border-magentap lg:translate-y-20 translate-y-10 lg:translate-x-20 translate-x-10 backdrop-blur bg-magentap/30': dropDown2
+                }">
+
+                <img src="assets/x-magenta.svg" class="absolute bottom-4 right-4 w-4 lg:w-10" alt=""
+                    :class="{
+                        'transition-all duration-700 ease-in-out scale-100': dropDown2,
+                        'transition-all duration-700 ease-in-out scale-0': !dropDown2
+                    }">
+                <img src="assets/x.svg" class="absolute bottom-4 right-4 w-4 lg:w-10 " alt=""
+                    :class="{
+                        'transition-all duration-700 ease-in-out scale-0': dropDown2,
+                        'transition-all duration-700 ease-in-out scale-100': !dropDown2
+                    }">
+            </div>
+
+
+        </div>
 
     </div>
 </div>
@@ -209,12 +324,108 @@
 
         </section>
 
+        <section class="bg-black mt-24">
 
-        <section class="bg-gris">
-
-            
+            <div class="container mx-auto">
+                <div>
+    <h1 class="text-white text-5xl text-center">HOW IT WORKS</h1>
+    <div class="container px-5 py-24 mx-auto flex flex-wrap text-white font-courier">
+        <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+                class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-gold text-gray-600 relative z-10 title-font font-medium text-sm">
+                1</div>
+            <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                <div
+                    class="flex-shrink-0 w-24 h-24 bg-gray-600 text-gold rounded-full inline-flex items-center justify-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <h2 class="font-medium title-font mb-1 text-xl">Shooting Stars</h2>
+                    <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke
+                        try-hard cliche palo santo offal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+                class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-gold text-gray-600 relative z-10 title-font font-medium text-sm">
+                2</div>
+            <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                <div
+                    class="flex-shrink-0 w-24 h-24 bg-gray-600 text-gold rounded-full inline-flex items-center justify-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <h2 class="font-medium title-font mb-1 text-xl">The Catalyzer</h2>
+                    <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke
+                        try-hard cliche palo santo offal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+                class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-gold text-gray-600 relative z-10 title-font font-medium text-sm">
+                3</div>
+            <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                <div
+                    class="flex-shrink-0 w-24 h-24 bg-gray-600 text-gold rounded-full inline-flex items-center justify-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="3"></circle>
+                        <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                    </svg>
+                </div>
+                <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <h2 class="font-medium title-font mb-1 text-xl">The 400 Blows</h2>
+                    <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke
+                        try-hard cliche palo santo offal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="flex relative pb-10 sm:items-center md:w-2/3 mx-auto">
+            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+            </div>
+            <div
+                class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-gold text-gray-600 relative z-10 title-font font-medium text-sm">
+                4</div>
+            <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                <div
+                    class="flex-shrink-0 w-24 h-24 bg-gray-600 text-gold rounded-full inline-flex items-center justify-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+                    <h2 class="font-medium title-font mb-1 text-xl">Neptune</h2>
+                    <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke
+                        try-hard cliche palo santo offal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
 
         </section>
+
 
     </main>
 
